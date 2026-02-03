@@ -114,8 +114,28 @@ export default abstract class Entity{
         }
     }
 
-    setState(_state:{}):void{
-
+    setState(_state: Partial<ReturnType<typeof this.getState>>): void {
+        if ('health' in _state && _state.health !== undefined) {
+            this._health = _state.health;
+        }
+        if ('position' in _state && _state.position !== undefined) {
+            this.position = _state.position;
+        }
+        if ('velocity' in _state && _state.velocity !== undefined) {
+            this.velocity = _state.velocity;
+        }
+        if ('rotation' in _state && _state.rotation !== undefined) {
+            this._rotation = _state.rotation;
+        }
+        if ('scale' in _state && _state.scale !== undefined) {
+            this.scale = _state.scale;
+        }
+        if ('cates' in _state && _state.cates !== undefined) {
+            this._cates = _state.cates;
+        }
+        if ('state' in _state && _state.state !== undefined) {
+            this._state = _state.state;
+        }
     }
 
     move(angle: number){

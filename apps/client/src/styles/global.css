@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Mono&family=Black+Han+Sans&family=Black+Ops+One&family=Bebas+Neue&family=Major+Mono+Display&family=Poppins&family=Josefin+Sans&family=New+Amsterdam&family=Oswald&family=Permanent+Marker&display=swap');
+
+* {
+  @apply box-border text-neutral-100 sm:text-sm md:text-base lg:text-lg;
+  font-family: 'Oswald', sans-serif;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  @apply w-full h-full m-0 p-0 overflow-hidden bg-neutral-950 text-neutral-100;
+}
+
+#root {
+  @apply w-full h-full;
+}
+
+button {
+  cursor: pointer;
+}
+button,
+input,
+select,
+textarea,
+.goldbox {
+  border: 2px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(45deg, #ffdb63, #fff6e6, #ffce49);
+  box-shadow:
+    0 0 3px #ffdb63,
+    inset 0 0 3px #ffdb63;
+  background: #191a1b;
+  transition: all 0.2s ease;
+}
+button:hover,
+input:hover,
+select:hover,
+textarea:hover,
+.goldbox:hover {
+  border-image-source: linear-gradient(225deg, #ffdb63, #fff6e6, #ffce49);
+  box-shadow:
+    0 0 5px #ffe48a,
+    inset 0 0 5px #ffe48a;
+  background: #242627;
+}
+.aquabox {
+  border: 2px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(45deg, #00f5ff, #bbffe5, #06ffc1);
+  box-shadow:
+    0 0 3px #00f5ff,
+    inset 0 0 3px #00f5ff;
+  background: #191a1b;
+  transition: all 0.2s ease;
+}
+.aquabox:hover {
+  border-image-source: linear-gradient(225deg, #00f5ff, #bbffe5, #06ffc1);
+  box-shadow:
+    0 0 5px #3effc5,
+    inset 0 0 5px #3effc5;
+  background: #242627;
+}
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled {
+  opacity: 0.5;
+}
+input:focus,
+button:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+.p {
+  @apply sm:p-0.5 md:p-1 lg:p-1.5;
+}
+.r {
+  @apply rounded-sm lg:rounded-md;
+}
+
+.under {
+  border-bottom: 2px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(90deg, #ffffff00, #cfcfcf, #ffffff, #cfcfcf, #ffffff00);
+}
+.nav {
+  @apply w-full flex flex-row justify-center items-center under;
+  background: #191a1b6c;
+  box-shadow:
+    0 1px 10px #ffffff33,
+    0 1px 20px #ffffff22,
+    0 1px 30px #ffffff11;
+}
+.nav > div {
+  @apply bg-[#fff0] hover:bg-[#fff1] sm:p-2 md:p-3 lg:p-4 sm:text-base md:text-lg lg:text-xl cursor-pointer select-none sm:w-16 md:w-20 lg:w-24 text-center;
+}
+.nav > div.sel {
+  border-bottom: 3px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(90deg, #ffdb63, #ffe987, #ffce49);
+  box-shadow: inset 0 0 5px #ffdb6322;
+}

@@ -1,13 +1,18 @@
 {
   "name": "fractal",
   "private": true,
-  "sideEffects": false,
+  "workspaces": ["apps/*", "packages/*"],
   "type": "module",
   "scripts": {
-    "build": "remix vite:build",
-    "dev": "remix vite:dev",
+    "dev": "bun run --filter '*' dev",
+    "dev:client": "bun run --filter @fractal/client dev",
+    "dev:server": "bun run --filter @fractal/server dev",
+    "dev:legacy": "remix vite:dev",
+    "dev:legacy-server": "cd server && bun run dev",
+    "build": "bun run --filter '*' build",
+    "build:legacy": "remix vite:build",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
-    "start": "remix-serve ./build/server/index.js",
+    "start:legacy": "remix-serve ./build/server/index.js",
     "typecheck": "tsc"
   },
   "dependencies": {
